@@ -3,14 +3,11 @@
     "version": "0.1",
     "description": "Adds functionality to Letterboxd",
     "permissions": ["storage", "tabs"],
-    "host_permissions": ["https://letterboxd.com/*"],
-    "background": {
-        "service_worker": "background.js"
-    },
+    "host_permissions": ["*://letterboxd.com/*"],
     "content_scripts": [
         {
-            "matches": ["https://letterboxd.com/*"],
-            "js": ["contentSсript.js"]
+            "matches": ["*://letterboxd.com/*"],
+            "js": ["main.js"]
         }
     ],
     "action": {
@@ -22,5 +19,5 @@
         "default_title": "Better Letterboxd",
         "default_popup": "popup.html"
     },
-    "manifest_version": 3
+    "manifest_version": 2
 }
