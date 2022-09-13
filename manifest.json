@@ -1,5 +1,26 @@
 {
-    "manifest_version": 3,
-    "version": "1.0",
-    "name": "Better-Letterboxd"
+    "name": "Better-Letterboxd",
+    "version": "0.1",
+    "description": "Adds functionality to Letterboxd",
+    "permissions": ["storage", "tabs"],
+    "host_permissions": ["https://letterboxd.com/*"],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://letterboxd.com/*"],
+            "js": ["contentSсript.js"]
+        }
+    ],
+    "action": {
+        "default_icon": {
+            "16": "assets/icon.png",
+            "24": "assets/icon.png",
+            "32": "assets/icon.png"
+        },
+        "default_title": "Better Letterboxd",
+        "default_popup": "popup.html"
+    },
+    "manifest_version": 3
 }
